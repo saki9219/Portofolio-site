@@ -66,7 +66,8 @@ Vue.component('modal-component', {
             </span>
         </div>
             <p id="modal-text">{{item.text}}</p>
-            <p id="modal-link">{{item.link}}</p>
+            <p id="modal-link">URL:<a href="#">{{item.link}}</a></p>
+            <p id="modal-link">GitHub:<a href="#">{{item.github}}</a></p>
             <button class="btn-menu" id="modal-close" type="button" @click="close">閉じる</button>
         </div>
     </dialog>
@@ -95,7 +96,7 @@ Vue.component('work-card', {
         item:Object,
     },
     template:`
-    <div class="item">
+    <div class="item" id="work-card">
         <img
         :src="'img/' + item.image" 
         :alt="item.title"
@@ -124,7 +125,12 @@ Vue.component('work-grid', {
     },
     template:`
     <div class="grid" id="work-grid">
-        <work-card v-for="item in items" :key="item.id" :item="item" @show-detail="$emit('show-detail', item)"></work-card>
+        <work-card
+        v-for="item in items"
+        :key="item.id"
+        :item="item"
+        @show-detail="$emit('show-detail', item)"
+        ></work-card>
     </div>
     `,
 });
