@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "title": "ポートフォリオサイト",
+        "image": "portfolio.png",
+        "tags": ["HTML / CSS", "JavaScript", "Vue.js"],
+        "link": "works.html",
+        "text": "就職活動を目的としたポートフォリオサイトを制作しました。"
+    },
+    {
+        "id": 2,
+        "title": "おみくじアプリ",
+        "image": "omikujiapp.png",
+        "tags": ["HTML / CSS", "JavaScript"],
+        "link": "works.html",
+        "text": "今日の運勢が占えるおみくじアプリです。"
+    },
+    {
+        "id": 3,
+        "title": "ストレス診断アプリ",
+        "image": "stress_checker.png",
+        "tags": ["HTML / CSS", "JavaScript"],
+        "link": "works.html",
+        "text": "質問に答えるだけでストレス度がチェックできるストレス診断アプリです。"
+    },
+    {
+        "id": 4,
+        "title": "BMI判定アプリ",
+        "image": "bmiapp.png",
+        "tags": ["HTML / CSS", "JavaScript"],
+        "link": "works.html",
+        "text": "身長と体重を入力するとBMIを判定できるBMI判定アプリです。"
+    }
+]
