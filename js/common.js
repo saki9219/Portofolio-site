@@ -96,11 +96,10 @@ Vue.component('work-card', {
         item:Object,
     },
     template:`
-    <div class="item" id="work-card">
+    <div class="item" id="work-card" @click="$emit('show-detail', item)">
         <img
         :src="'img/' + item.image" 
         :alt="item.title"
-        @click="$emit('show-detail', item)"
         class="item-img">
         <p>{{item.title}}</p>
 
@@ -146,6 +145,11 @@ new Vue({
     methods:{
         toggleNav(){
             this.isNavOpen = !this.isNavOpen;
+            if(this.isNavOpen){
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = '';
+            }
         },
         openModal(item){
             this.item = item;

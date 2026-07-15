@@ -4,6 +4,7 @@
 html {
     font-size: 100%;
     scroll-padding-top: 80px;
+    scroll-behavior: smooth;
 }
 body {
     font-family: "Zen Kaku Gothic New", sans-serif;
@@ -11,10 +12,6 @@ body {
     background-color: #f7f5f3;
     font-size: 1rem;
     line-height: 1.7;
-}
-html,
-body {
-    scroll-behavior: smooth;
 }
 a {
     text-decoration: none;
@@ -32,7 +29,7 @@ img {
 .wrapper {
     text-align: center;
     max-width: 1120px;
-    margin: 0 auto;
+    margin: auto;
     padding: 0 50px;
 }
 li {
@@ -41,6 +38,7 @@ li {
 .section-title {
     font-weight: bold;
     font-size: 4rem;
+    margin-top: 100px;
 }
 .sub-title {
     margin-bottom: 2rem;
@@ -276,6 +274,7 @@ nav {
     width: 250px;
     height: 250px;
     border-radius: 50%;
+    object-position: center;
 }
 .about-title {
     font-size: 3rem;
@@ -289,6 +288,7 @@ nav {
 }
 .about-text {
     text-align: left;
+    margin-bottom: 10px
 }
 #skill ul {
     display: flex;
