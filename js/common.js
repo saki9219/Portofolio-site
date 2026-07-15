@@ -29,9 +29,9 @@ Vue.component('footer-component', {
         <div class="footer-content">
             <div class="footer-nav">
                 <ul class="footer">
-                    <li class="footer-item"><a href="#works" class="btn_about">Works</a></li>
-                    <li class="footer-item"><a href="#about" class="btn_works">About</a></li>
-                    <li class="footer-item"><a href="#contact" class="btn_works">Contact</a></li>
+                    <li class="footer-item"><a href="#works" class="btn_works">Works</a></li>
+                    <li class="footer-item"><a href="#about" class="btn_about">About</a></li>
+                    <li class="footer-item"><a href="#contact" class="btn_contact">Contact</a></li>
                 </ul>
                 <ul class="footer">
                     <li class="footer-item">
@@ -141,6 +141,12 @@ new Vue({
         worksList:[],  // 制作物の情報
         item:null,
         isModalOpen:false, // モーダルの開閉状態
+        // お問い合わせフォームのバリデーションチェック
+        userName: '',
+        email: '',
+        nameError: '',
+        emailError:'',
+        isSubmitted: false, // 送信完了を表す状態
     },
     methods:{
         toggleNav(){
@@ -157,6 +163,42 @@ new Vue({
         },
         closeModal(){
             this.isModalOpen = false;
+        },
+        validateName() {
+            let name = this.userName.trim();
+            if(name === '') {
+                this.nameError = 'お名前を入力してください。';
+                return;
+            }
+            if(name.length < 2) {
+                this.nameError = 'お名前は2文字以上で入力してください。';
+                return;
+            }
+            this.nameError = '';
+        },
+        validateEmail() {
+            let email = this.email.trim();
+            if(email === '') {
+                this.emailError = 'メールアドレスを入力してください。';
+                return;
+            }
+            // @マークの有無
+            if(!email.includes('@')) {
+                this.emailError = 'メールアドレスの形式が正しくありません。';
+                return;
+            }
+            const parts = email.split('@');
+            if(parts.length !==2 || parts[0] === '' || !parts[1].includes('.')){
+                this.emailError = 'メールアドレスの形式が正しくありません。';
+                return;
+            }
+            this.emailError = '';
+        },
+        submitForm() {
+            if(!this.canSubmit) {
+                return;
+            }
+            this.isSubmitted = true;
         }
     },
     async created() {
@@ -169,6 +211,19 @@ new Vue({
             // console.log(this.worksList);
         }catch(e) {
             console.error(e);
+        }
+    },
+    computed:{
+        canSubmit() {
+            // 必須項目
+            const requiredFilled =
+            this.userName.trim() !== '' &&
+            this.email.trim() !== '';
+            // エラーの有無
+            const noErrors =
+            !this.nameError &&
+            !this.emailError;
+            return requiredFilled && noErrors; 
         }
     }
 });

@@ -43,6 +43,17 @@ li {
 .sub-title {
     margin-bottom: 2rem;
 }
+.page-top {
+    margin-bottom: 0;
+	float: right;
+    height: 150px;
+    width: 150px;
+}
+.page-top a {
+    display: block;
+    min-height: 16px;
+	padding: 6px 0 6px 28px;
+}
 
 /* ボタン */
 .btn {
@@ -304,7 +315,9 @@ nav {
 .contact-text {
     margin-bottom: 15px;
 }
-
+.text-error {
+    color: #FF474C;
+}
 /* フッター */
 footer {
     background-color: #e5e2df;

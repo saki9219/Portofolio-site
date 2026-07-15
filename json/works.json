@@ -10,12 +10,12 @@
     },
     {
         "id": 2,
-        "title": "おみくじアプリ",
+        "title": "架空のトリミングサロン「fuwari dog salon」",
         "image": "omikujiapp.png",
         "tags": ["HTML / CSS", "JavaScript"],
         "link": "works.html",
         "github":"#",
-        "text": "今日の運勢が占えるおみくじアプリです。"
+        "text": "架空のトリミングサロン「fuwari dog salon」のWebサイトを制作しました。"
     },
     {
         "id": 3,
