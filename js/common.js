@@ -8,9 +8,9 @@ Vue.component('header-component', {
         <a href="index.html"><img class="logo" src="./img/logo.png" alt="Saki Yanase Portfolio"></a>
             <nav>
                 <ul class="main-nav">
-                    <li><a href="index.html#works">Works</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="index.html#works" @click="$emit('close-nav')">Works</a></li>
+                    <li><a href="index.html#about" @click="$emit('close-nav')">About</a></li>
+                    <li><a href="index.html#contact" @click="$emit('close-nav')">Contact</a></li>
                 </ul>
             </nav>
             <button type="button" class="nav-btn" id="nav-btn" @click="$emit('toggle-nav')">
@@ -146,7 +146,6 @@ new Vue({
         email: '',
         nameError: '',
         emailError:'',
-        isSubmitted: false, // 送信完了を表す状態
     },
     methods:{
         toggleNav(){
@@ -156,6 +155,10 @@ new Vue({
             } else {
                 document.body.style.overflow = '';
             }
+        },
+        closeNav() {
+            this.isNavOpen = false;
+            document.body.style.overflow = '';
         },
         openModal(item){
             this.item = item;
@@ -194,12 +197,6 @@ new Vue({
             }
             this.emailError = '';
         },
-        submitForm() {
-            if(!this.canSubmit) {
-                return;
-            }
-            this.isSubmitted = true;
-        }
     },
     async created() {
         try {

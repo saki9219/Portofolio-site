@@ -22,7 +22,11 @@
 
 <body>
     <div id="app">
-        <header-component @toggle-nav="toggleNav" :is-nav-open="isNavOpen"></header-component>
+        <header-component
+        :is-nav-open="isNavOpen"
+        @close-nav="closeNav"
+        @toggle-nav="toggleNav"
+        ></header-component>
         <section class="mv">
             <div id="mainvisual">
                 <img src="img/mv.png" alt="Saki Yanase Portfolioのメインビジュアル">
@@ -39,8 +43,15 @@
             <section id="works" class="wrapper">
                 <h2 class="section-title">Works</h2>
                 <p class="sub-title">制作物</p>
-                <work-grid :items="worksList" @show-detail="openModal"></work-grid>
-                <modal-component :item="item" :is-open="isModalOpen" @close="closeModal"></modal-component>
+                <work-grid
+                :items="worksList"
+                @show-detail="openModal"
+                ></work-grid>
+                <modal-component
+                :item="item"
+                :is-open="isModalOpen"
+                @close="closeModal"
+                ></modal-component>
             </section>
             <section id="about" class="wrapper">
                 <h2 class="section-title">About</h2>
@@ -50,7 +61,7 @@
                     <div class="about-content-body">
                         <h3 class="about-title">Saki Yanase</h3>
                         <p class="about-subtitle">栁瀬 早紀</p>
-                        <p class="about-text">1999年生まれ / 福岡県在住
+                        <p class="about-text">1999年生まれ / 福岡県在住</p>
                         <p class="about-text">前職の自治体では、税システムの運用保守業務に携わり、ヘルプデスク業務を通じて、Webシステムのデザインや操作性がシステムの利便性や、業務効率化に直結することを実感しました。</p>    
                         <p class="about-text">この経験から、「仕組みを作る側」として、より本質的な課題解決に携わりたいという思いが芽生え、IT業界でキャリアを形成したいと考えるようになりました。</p>
                         <p class="about-text">現在は、職業訓練校でWeb開発を学習しながら、デザインからコーディングまで一貫して対応できるフロントエンドエンジニアとしての就職を目指しています。</p>
