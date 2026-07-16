@@ -74,21 +74,6 @@ li {
     opacity: 0.8;
 }
 
-/* モーダル */
-dialog {
-    border: none;
-    margin: auto;
-    padding: 1rem;
-}
-dialog::backdrop{
-    background-color: rgba(0,0,0,0.3);
-}
-dialog img{
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    border-radius: 16px;
-}
-
 /* ヘッダー */
 .page-header {
     max-width: 960px;
@@ -232,8 +217,9 @@ nav {
     cursor: pointer;
 }
 #work-card {
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
 }
 #work-card:hover {
     transform: translateY(-5px);
@@ -272,6 +258,25 @@ nav {
     color: #f7f5f3;
     border-radius: 20px;
     letter-spacing: 0.08em;
+}
+
+/* modal */
+dialog {
+    max-width: 500px;
+    width: 90%;
+    border: none;
+    margin: auto;
+    padding: 1rem;
+    border-radius: 12px;
+}
+dialog::backdrop{
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+}
+dialog img{
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 16px;
 }
 
 /* about */
@@ -386,7 +391,7 @@ footer {
     .nav-btn {
     display: none;
     }
-    
+
     /* ヘッダー */
     .page-header {
         display: flex;
