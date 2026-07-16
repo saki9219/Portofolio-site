@@ -22,7 +22,7 @@
         "title": "ストレス診断アプリ",
         "image": "stress_checker.png",
         "tags": ["HTML / CSS", "JavaScript"],
-        "link": "works.html",
+        "link": "http://127.0.0.1:5500/shindan.html",
         "github":"#",
         "text": "質問に答えるだけでストレス度がチェックできるストレス診断アプリです。"
     },

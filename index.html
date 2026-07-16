@@ -50,69 +50,55 @@
                     <div class="about-content-body">
                         <h3 class="about-title">Saki Yanase</h3>
                         <p class="about-subtitle">栁瀬 早紀</p>
-                        <p class="about-text">1999年生まれ／福岡県在住
+                        <p class="about-text">1999年生まれ / 福岡県在住
                         <p class="about-text">前職の自治体では、税システムの運用保守業務に携わり、ヘルプデスク業務を通じて、Webシステムのデザインや操作性がシステムの利便性や、業務効率化に直結することを実感しました。</p>    
                         <p class="about-text">この経験から、「仕組みを作る側」として、より本質的な課題解決に携わりたいという思いが芽生え、IT業界でキャリアを形成したいと考えるようになりました。</p>
                         <p class="about-text">現在は、職業訓練校でWeb開発を学習しながら、デザインからコーディングまで一貫して対応できるフロントエンドエンジニアとしての就職を目指しています。</p>
                     </div>
                 </div>
-            </section>
-
-            <section id="skill" class="wrapper">
-                <h2 class="section-title">Skill</h2>
-                <p class="sub-title">できること</p>
                 <div class="skill-content">
-                    <ul>
-                        <li>
-                            <img src="./img/portfolio.png" alt="">
-                            <div class="skill-tag">
-                                <h3 class="skill-title">Web Development</h3>
-                                <p class="skii-text">デザインカンプを忠実に再現することができます。<br>
-                                    レスポンシブ対応も可能です。<br>
-                                    シンプルなコードでの機能実装や規則性のある命名を行い、<br>
-                                    誰が見ても分かりやすく保守運用しやすいコードを書くことを心がけています。<br>
-                                    HTML、CSS、JavaScript、VisualStudioCode</p>
-                            </div>
-                        </li>
-                        <li>
-
-                            <img src="./img/portfolio.png" alt="">
-                            <div class="skill-tag">
-                                <h3 class="skill-title">Website Design</h3>
-                                <p class="skii-text">デザインカンプを忠実に再現することができます。<br>
-                                    レスポンシブ対応も可能です。<br>
-                                    シンプルなコードでの機能実装や規則性のある命名を行い、<br>
-                                    誰が見ても分かりやすく保守運用しやすいコードを書くことを心がけています。<br>
-                                    HTML、CSS、JavaScript、VisualStudioCode</p>
-                            </div>
-                        </li>
-                </div>
+                    <h3 class="skill-title">Skill</h3>
+                    <p class="skill-subtitle">できること</p>
+                    <h4 class="">《言語》</h4>
+                    <p class="skill-text">HTML / CSS（レスポンシブ対応）<br>
+                        JavaScript / Vue.js</p>
+                        <h4>《ソフト》</h4>
+                        <p class="skill-text">VisualStudioCode / figma / Git Hub / Canva</p>
+                        <h4>《強み》</h4>
+                        <p class="skill-text">デザインカンプ（Figma）をもとにした正確なコーディング<br>
+                            誰が見ても分かりやすく保守運用しやすいコードを書くこと<br>
+                            レスポンシブ対応を前提としたレイアウト設計
+                            JavaScriptによる動きのあるUI実装</p>
+            </div>
+            </section>
 
             <section id="contact" class="wrapper">
                 <h2 class="section-title">Contact</h2>
                 <p class="sub-title">お問い合わせ</p>
-                <p class="contact-text">ご連絡は下記よりお願いいたします</p>
-                <i class="fa-regular fa-envelope"></i> <a class="contact-link" href="mailto:saki9219fleur@gmail.com">Contact by email</a>
+                <p class="contact-text">お問い合わせは下記よりお願いいたします</p>
+                <!-- <i class="fa-regular fa-envelope"></i> <a class="contact-link" href="mailto:saki9219fleur@gmail.com">Contact by email</a> -->
                 <form action="https://ssgform.com/s/A1w5gS2qPkuc" method="post" novalidate target="_blank">
                     <div>
                         <label for="user-name">
-                            <p>お名前（必須）<br></p>
-                            <input type="text" name="name" id="user-name" v-model="userName" :class="{ 'is-invalid': nameError }" @input="validateName">
+                            <p class="form-title">お名前（必須）<br></p>
+                            <input type="text" name="user-name" id="user-name" v-model="userName" :class="{ 'is-invalid': nameError }" @input="validateName">
                         </label>
                         <p class="text-error" v-if="nameError">{{nameError}}</p>
                     </div>
                     <div>
                         <label for="email">
-                            <p>メールアドレス（必須）<br></p>
+                            <p class="form-title">メールアドレス（必須）<br></p>
                             <input type="email" name="email" id="email" v-model="email" :class="{ 'is-invalid': emailError }" @input="validateEmail">
                         </label>
                         <p class="text-error" v-if="emailError">{{emailError}}</p>
                     </div>
                     <label for="message">
-                        <p>お問い合わせ内容</p>
+                        <p class="form-title">お問い合わせ内容</p>
                         <textarea name="text" id="message"></textarea><br>
                     </label>
-                    <input type="submit" value="送信" :disabled="!canSubmit">
+                    <div class="button">
+                        <input type="submit" value="送信" :disabled="!canSubmit">
+                    </div>
                 </form>
             </section>
         </main>

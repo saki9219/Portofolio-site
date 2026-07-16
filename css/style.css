@@ -28,8 +28,8 @@ img {
 }
 .wrapper {
     text-align: center;
-    max-width: 1120px;
-    margin: auto;
+    max-width: 960px;
+    margin: 0 auto;
     padding: 0 50px;
 }
 li {
@@ -41,7 +41,7 @@ li {
     margin-top: 100px;
 }
 .sub-title {
-    margin-bottom: 2rem;
+    margin-bottom: 32px;
 }
 .page-top {
     margin-bottom: 0;
@@ -91,6 +91,7 @@ dialog img{
 
 /* ヘッダー */
 .page-header {
+    max-width: 960px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -208,11 +209,11 @@ nav {
     z-index: 1;
 }
 .mv-title {
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: bold;
 }
 .mv-subtitle {
-    font-size: 14px;
+    font-size: 0.875rem;
 }
 
 /* mainvisual */
@@ -244,7 +245,7 @@ nav {
 }
 .works-tag-html {
     display: inline-block;
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 600;
     padding: 8px 16px;
     background-color: #d9a99c;
@@ -254,7 +255,7 @@ nav {
 }
 .works-tag-js {
     display: inline-block;
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 600;
     padding: 8px 16px;
     background-color: #d7bf72;
@@ -264,7 +265,7 @@ nav {
 }
 .works-tag-vue {
     display: inline-block;
-    font-size: 13px;
+    font-size: 0.8125rem;
     font-weight: 600;
     padding: 8px 16px;
     background-color:#8faf99;
@@ -312,11 +313,38 @@ nav {
 #contact {
     padding-bottom: 120px;
 }
-.contact-text {
+#contact .contact-text {
     margin-bottom: 15px;
 }
-.text-error {
+#contact input,textarea {
+    width: 100%;
+    border: 1px solid #c8c8c8; 
+    border-radius: 4px;
+    padding: 5px;
+}
+#contact textarea {
+    height: 160px;
+}
+#contact .text-error {
     color: #FF474C;
+}
+#contact .button input[type="submit"] {
+    width: 200px;
+    background-color: #e0ddd9;
+    color: #5a5755;
+    border: solid 1px #cfcac6;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+}
+#contact .button input[type="submit"]:disabled {
+    background-color: #ece9e7;
+    color: #b8b5b3;
+    border-color: #dcd9d7;
+    box-shadow: none;
+}
+#contact .button input[type="submit"]:enabled:hover {
+    background-color: #d4d0cc;
+    color: #3f3c3b;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.08);
 }
 /* フッター */
 footer {
@@ -360,7 +388,7 @@ footer {
     .page-header {
         display: flex;
         justify-content: space-between;
-        padding-top: 1.5rem;
+        padding-top: 24px;
     }
     nav {
         position: static;
@@ -375,7 +403,7 @@ footer {
 
      /* mv */
     .mv-title {
-    font-size: 48px;
+    font-size: 3rem;
     }
     #mainvisual img {
     width: 100%;
