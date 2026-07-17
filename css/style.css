@@ -55,7 +55,7 @@ li {
 	padding: 6px 0 6px 28px;
 }
 
-/* ボタン */
+/* button */
 .btn {
     display: inline-block;
     font-size: 1.5rem;
@@ -74,7 +74,7 @@ li {
     opacity: 0.8;
 }
 
-/* ヘッダー */
+/* header */
 .page-header {
     max-width: 960px;
     display: flex;
@@ -138,8 +138,7 @@ nav {
     width: 100%;
     background-color: #432;
     position: absolute;
-    transition: inherit;
-    /* inherit...先祖要素から値を継承 */
+    transition: inherit; /* inherit...先祖要素から値を継承 */
 }
 .nav-btn-line::before {
     top: -10px;
@@ -280,38 +279,38 @@ dialog img{
 }
 
 /* about */
-.about-content {
+#about .about-content {
     display: flex;
     gap: 40px;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
 }
-.about-content img {
+#about .about-content img {
     width: 250px;
     height: 250px;
     border-radius: 50%;
     object-position: center;
 }
-.about-title {
+#about .about-title {
     font-size: 3rem;
 }
-.about-subtitle {
+#about .about-subtitle {
     font-size: 1.5rem;
     margin-bottom: 20px;
 }
-.about-content-body {
+#about .about-content-body {
     max-width: 500px;
 }
-.about-text {
+#about .about-text {
     text-align: left;
     margin-bottom: 10px
 }
-#skill ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+#about .skill-title {
+    font-size: 2rem;
+}
+#about .skill-subtitle {
+    font-size: 1rem;
 }
 
 /* contact */
@@ -410,14 +409,13 @@ footer {
     }
 }
 
-
 /* デスクトップ版 */
 @media (min-width: 800px){
     .nav-btn {
     display: none;
     }
 
-    /* ヘッダー */
+    /* header */
     .page-header {
         display: flex;
         justify-content: space-between;
