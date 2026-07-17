@@ -352,7 +352,7 @@ dialog img{
     box-shadow: 0 3px 6px rgba(0,0,0,0.08);
 }
 
-/* フッター */
+/* footer */
 footer {
     background-color: #e5e2df;
     padding: 30px 0;
@@ -385,6 +385,31 @@ footer {
 .footer-content small {
     font-size: 0.875rem;
 }
+
+/* pagetop */
+.btn-pagetop {
+    position: fixed;
+    right: 0.125rem;
+    bottom: 100px;
+    width: 48px;
+    height: 48px;
+    background-color: #e5e2df;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: grid;
+    place-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    cursor: pointer;
+
+    &.is-shown{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
 
 /* デスクトップ版 */
 @media (min-width: 800px){
@@ -472,5 +497,17 @@ footer {
         margin-left: 220px;
         text-align: left;
         width: 100%;
+    }
+
+    /* pagetop */
+    .btn-pagetop {
+        right: 14px;
+        bottom: 120px;
+        width: 60px;
+        height: 60px;
+        background-color: #e5e2df;
+        border-radius: 50%;
+        font-weight: bold;
+        font-size: 2rem;
     }
 }
