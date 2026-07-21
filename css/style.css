@@ -258,11 +258,21 @@ nav {
     border-radius: 20px;
     letter-spacing: 0.08em;
 }
-
+.works-tag-html,
+.works-tag-js,
+.works-tag-vue {
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
 /* modal */
 dialog {
+    position: relative;
     max-width: 500px;
     width: 90%;
+    height: 90vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     border: none;
     margin: auto;
     padding: 1rem;
@@ -274,8 +284,32 @@ dialog::backdrop{
 }
 dialog img{
     aspect-ratio: 1 / 1;
+    width: 80%;
+    max-height: 40vh;
     object-fit: cover;
     border-radius: 16px;
+}
+
+#modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #f7f5f3;
+    border: none;
+    font-size: 1.2rem;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+#modal-close:hover {
+    opacity: 0.7;
+    transform: scale(0.9);
 }
 
 /* about */
@@ -290,7 +324,7 @@ dialog img{
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    object-position: center;
+    object-position: center 18%;
 }
 #about .about-title {
     font-size: 3rem;
@@ -337,7 +371,7 @@ dialog img{
     padding-bottom: 120px;
 }
 #contact .contact-text {
-    margin-bottom: 15px;
+    margin-bottom: 30px;
 }
 #contact input,textarea {
     width: 100%;
@@ -350,6 +384,9 @@ dialog img{
 }
 #contact .text-error {
     color: #FF474C;
+}
+#contact .form-element {
+        margin-bottom: 15px;
 }
 #contact .button input[type="submit"] {
     width: 200px;
@@ -465,10 +502,9 @@ footer {
 
     /* header */
     .page-header {
-        display: flex;
-        justify-content: space-between;
-        padding-top: 24px;
-        max-width: 100%;
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 16px 0;
     }
     nav {
         position: static;
@@ -504,6 +540,9 @@ footer {
     #work-grid .item {
         width: 100%;
     }
+
+    /* modal */
+
 
     /* about */
     #about .about-content {

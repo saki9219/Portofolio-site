@@ -51,26 +51,26 @@ Vue.component('modal-component', {
         isOpen:Boolean,
     },
     template:`
-    <dialog id="modal" @click.self="close" ref="dialog">
-        <div v-if="item">
-            <img id="modal-img" :src="'img/' + item.image" :alt="item.title">
-            <p id="modal-name">{{item.title}}</p>
-            <div class="works-tag">
-            <span v-for="tag in item.tags" :key="tag"
-            :class="{
-                    'works-tag-html': tag === 'HTML / CSS',
-                    'works-tag-js': tag === 'JavaScript',
-                    'works-tag-vue': tag === 'Vue.js'
-                    }"
-            > {{ tag }}
-            </span>
-        </div>
-            <p id="modal-text">{{item.text}}</p>
-            <p id="modal-link">URL:<a href="#">{{item.link}}</a></p>
-            <p id="modal-link">GitHub:<a href="#">{{item.github}}</a></p>
-            <button class="btn-menu" id="modal-close" type="button" @click="close">閉じる</button>
-        </div>
-    </dialog>
+        <dialog id="modal" @click.self="close" ref="dialog">
+            <div v-if="item">
+                <img id="modal-img" :src="'img/' + item.image" :alt="item.title">
+                <p id="modal-name">{{item.title}}</p>
+                <div class="works-tag">
+                <span v-for="tag in item.tags" :key="tag"
+                :class="{
+                        'works-tag-html': tag === 'HTML / CSS',
+                        'works-tag-js': tag === 'JavaScript',
+                        'works-tag-vue': tag === 'Vue.js'
+                        }"
+                > {{ tag }}
+                </span>
+            </div>
+                <p id="modal-text">{{item.text}}</p>
+                <p id="modal-link">URL:<a href="#">{{item.link}}</a></p>
+                <p id="modal-link">GitHub:<a href="#">{{item.github}}</a></p>
+                <button class="btn-menu" id="modal-close" type="button" @click="close">×</button>
+                </div>
+        </dialog>
     `,
     methods:{
         close(){
@@ -78,13 +78,15 @@ Vue.component('modal-component', {
         }
     },
     watch:{
-        isOpen:function(val){
+        isOpen(val){
             const dialog = this.$refs.dialog;
             if(!dialog) return;
             if(val) {
                 dialog.showModal();
+                document.body.style.overflow = 'hidden';
             } else {
                 dialog.close();
+                document.body.style.overflow = '';
             }
         },
     },
